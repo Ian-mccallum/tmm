@@ -340,12 +340,7 @@ Sitemap: https://tmmphotos.com/sitemap.xml
 <meta property="og:site_name" content="TMM Photography">
 <meta property="og:locale" content="en_US">
 
-<!-- Twitter Card tags -->
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Sports Photography Naperville IL | TMM Photography">
-<meta name="twitter:description" content="Professional sports photography in Naperville, Illinois. Affordable rates starting at $25.">
-<meta name="twitter:image" content="https://tmmphotos.com/img/other/TMM1.png">
-```
+
 
 ### Phase 5: Image SEO Optimization
 
@@ -476,15 +471,7 @@ Sitemap: https://tmmphotos.com/sitemap.xml
 
 ### Phase 7: Content Strategy & Internal Linking
 
-#### Step 7.1: Create Blog Section
-**File:** `blog.html` (New)
-**Priority:** Medium
-**Purpose:** Drive organic traffic with sports photography tips
-**Content Ideas:**
-- "Best Camera Settings for Indoor Sports Photography"
-- "How to Capture Perfect Action Shots in Football"
-- "Sports Photography Tips for Parents"
-- "Why Professional Sports Photos Matter for Athletes"
+
 
 #### Step 7.2: Implement Internal Linking Strategy
 **Files:** All HTML files

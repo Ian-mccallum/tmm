@@ -5,7 +5,7 @@ Allow: /
 Disallow: /css/
 Disallow: /js/
 Disallow: /vids/
-Disallow: /New folder/
+
 
 # Allow important files for SEO
 Allow: /img/
