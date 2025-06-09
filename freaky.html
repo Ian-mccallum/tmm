@@ -30,6 +30,32 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
+            /* Hide all video controls and overlays */
+            -webkit-appearance: none;
+            appearance: none;
+            outline: none;
+            border: none;
+        }
+
+        /* Hide video controls on all browsers */
+        .video-background video::-webkit-media-controls {
+            display: none !important;
+        }
+
+        .video-background video::-webkit-media-controls-panel {
+            display: none !important;
+        }
+
+        .video-background video::-webkit-media-controls-play-button {
+            display: none !important;
+        }
+
+        .video-background video::-webkit-media-controls-start-playback-button {
+            display: none !important;
+        }
+
+        .video-background video::-moz-media-controls {
+            display: none !important;
         }
 
         /* Back button for escape */
@@ -299,7 +325,7 @@
 </head>
 <body>
     <div class="video-background">
-        <video autoplay muted loop playsinline preload="auto">
+        <video autoplay muted loop playsinline preload="auto" controls="false" disablepictureinpicture>
             <source src="vids/MVI_8061.MP4" type="video/mp4">
             <source src="vids/MVI_8061.webm" type="video/webm">
             Your browser does not support the video tag.
