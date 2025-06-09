@@ -16,18 +16,18 @@ const galleries = {
             { src: 'img/water-polo/0D8A2329.jpg', alt: 'Waterpolo player in motion' },
             { src: 'img/water-polo/0D8A2342.jpg', alt: 'Waterpolo player jumping' },
             // New images
-            { src: 'img/water-polo/n1.JPG', alt: 'Waterpolo photo n1' },
-            { src: 'img/water-polo/n2.JPG', alt: 'Waterpolo photo n2' },
-            { src: 'img/water-polo/n3.JPG', alt: 'Waterpolo photo n3' },
-            { src: 'img/water-polo/n4.JPG', alt: 'Waterpolo photo n4' },
-            { src: 'img/water-polo/n5.JPG', alt: 'Waterpolo photo n5' },
-            { src: 'img/water-polo/n6.JPG', alt: 'Waterpolo photo n6' },
-            { src: 'img/water-polo/n7.JPG', alt: 'Waterpolo photo n7' },
-            { src: 'img/water-polo/n8.JPG', alt: 'Waterpolo photo n8' },
-            { src: 'img/water-polo/n9.JPG', alt: 'Waterpolo photo n9' },
-            { src: 'img/water-polo/n10.JPG', alt: 'Waterpolo photo n10' },
-            { src: 'img/water-polo/n11.JPG', alt: 'Waterpolo photo n11' },
-            { src: 'img/water-polo/n12.JPG', alt: 'Waterpolo photo n12' }
+            { src: 'img/water-polo/n1.jpg', alt: 'Waterpolo photo n1' },
+            { src: 'img/water-polo/n2.jpg', alt: 'Waterpolo photo n2' },
+            { src: 'img/water-polo/n3.jpg', alt: 'Waterpolo photo n3' },
+            { src: 'img/water-polo/n4.jpg', alt: 'Waterpolo photo n4' },
+            { src: 'img/water-polo/n5.jpg', alt: 'Waterpolo photo n5' },
+            { src: 'img/water-polo/n6.jpg', alt: 'Waterpolo photo n6' },
+            { src: 'img/water-polo/n7.jpg', alt: 'Waterpolo photo n7' },
+            { src: 'img/water-polo/n8.jpg', alt: 'Waterpolo photo n8' },
+            { src: 'img/water-polo/n9.jpg', alt: 'Waterpolo photo n9' },
+            { src: 'img/water-polo/n10.jpg', alt: 'Waterpolo photo n10' },
+            { src: 'img/water-polo/n11.jpg', alt: 'Waterpolo photo n11' },
+            { src: 'img/water-polo/n12.jpg', alt: 'Waterpolo photo n12' }
         ]
     },
     'football': {
