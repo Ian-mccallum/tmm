@@ -1,0 +1,14 @@
+User-agent: *
+Allow: /
+
+# Block access to admin/development files
+Disallow: /css/
+Disallow: /js/
+Disallow: /vids/
+Disallow: /New folder/
+
+# Allow important files for SEO
+Allow: /img/
+
+# Sitemap location
+Sitemap: https://tmmphotos.com/sitemap.xml 

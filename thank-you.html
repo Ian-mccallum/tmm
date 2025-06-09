@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You | TMM Photography</title>
+    <meta name="description" content="Thank you for contacting TMM Photography.">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&family=Inter:wght@300;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="icon" type="image/png" href="img/other/TMM1.png">
+    <link rel="apple-touch-icon" href="img/other/TMM1.png">
+    <meta name="theme-color" content="#3a5a8c">
+    <meta name="msapplication-navbutton-color" content="#3a5a8c">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#3a5a8c">
+    <style>
+        .thank-you-section {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            background-color: #f5f5f5;
+        }
+        
+        .thank-you-card {
+            background: white;
+            padding: 3rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            max-width: 500px;
+            width: 100%;
+        }
+        
+        .checkmark {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 1.5rem;
+            display: block;
+        }
+        
+        .thank-you-card h1 {
+            color: #3a5a8c;
+            margin-bottom: 1rem;
+            font-size: 2.5rem;
+        }
+        
+        .thank-you-card p {
+            color: #666;
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+        
+        .return-btn {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background-color: #3a5a8c;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        
+        .return-btn:hover {
+            background-color: #4a6a9c;
+        }
+    </style>
+</head>
+<body class="index-page">
+    <nav class="top-nav">
+        <button class="menu-btn" id="openMenu">+ Menu</button>
+        <span class="mobile-title">Timmy Miller</span>
+        <a href="portfolio.html" class="nav-link">Portfolio</a>
+        <a href="contact.html" class="nav-link">Book Now</a>
+    </nav>
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+    <aside class="sidebar" id="sidebar">
+        <button class="close-btn" id="closeMenu">&times;</button>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Book Now</a></li>
+        </ul>
+    </aside>
+
+    <main class="thank-you-section">
+        <div class="thank-you-card">
+            <svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
+                <circle class="checkmark__circle" cx="26" cy="26" r="25" fill="none" stroke="#4CAF50" stroke-width="2"/>
+                <path class="checkmark__check" fill="none" stroke="#4CAF50" stroke-width="2" d="M14.1 27.2l7.1 7.2 16.7-16.8"/>
+            </svg>
+            <h1>Thank You!</h1>
+            <p>Your message has been sent successfully. I'll get back to you as soon as possible.</p>
+            <a href="index.html" class="return-btn">Return to Homepage</a>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-top">
+        <div class="footer-links">
+          <a href="index.html">Home</a>
+          <a href="portfolio.html">Portfolio</a>
+          <a href="about.html">About</a>
+                          <a href="contact.html">Book Now</a>
+        </div>
+        <div class="footer-social">
+            <a href="https://www.instagram.com/tmm.photography1/" target="_blank" rel="noopener noreferrer" aria-label="Follow on Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.tiktok.com/@tmm.photography1" target="_blank" rel="noopener noreferrer" aria-label="Follow on TikTok"><i class="fab fa-tiktok"></i></a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>Website Powered by <a href="https://ianinnovates.com" target="_blank" rel="noopener noreferrer">Ianinnovates</a></span>
+        <span class="footer-copyright-small">© 2025 TMM Photography | Naperville, IL | All rights reserved</span>
+      </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/header.js"></script>
+</body>
+</html> 

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Browse TMM Photography's gallery of sports action shots from Naperville high school athletics. View dynamic photos of football, basketball, volleyball, soccer, lacrosse, and nature photography.">
+    <meta name="keywords" content="sports photography gallery, high school athletics photos, Naperville sports gallery, football action shots, basketball photos, volleyball photography, athletic photography gallery">
+    
+    <!-- Open Graph tags -->
+    <meta property="og:title" content="Sports Photography Gallery | High School Athletics | TMM Photography Naperville">
+    <meta property="og:description" content="Browse TMM Photography's gallery of sports action shots from Naperville high school athletics. Dynamic photos of football, basketball, volleyball, and more.">
+    <meta property="og:image" content="https://tmmphotos.com/img/football/cool1.JPEG">
+    <meta property="og:url" content="https://tmmphotos.com/gallery">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="TMM Photography">
+    <meta property="og:locale" content="en_US">
+
+    <!-- Twitter Card tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Sports Photography Gallery | TMM Photography Naperville">
+    <meta name="twitter:description" content="Browse TMM Photography's gallery of sports action shots from Naperville high school athletics.">
+    <meta name="twitter:image" content="https://tmmphotos.com/img/football/cool1.JPEG">
+    
+    <title>Sports Photography Gallery | High School Athletics | TMM Photography Naperville</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&family=Inter:wght@300;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="canonical" href="https://tmmphotos.com/gallery" />
+    <link rel="icon" type="image/png" href="img/other/TMM1.png">
+    <link rel="apple-touch-icon" href="img/other/TMM1.png">
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <nav class="top-nav">
+        <button class="menu-btn" id="openMenu">+ Menu</button>
+        <span class="mobile-title">Timmy Miller</span>
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="contact.html" class="nav-link">Book Now</a>
+    </nav>
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+    <aside class="sidebar" id="sidebar">
+        <button class="close-btn" id="closeMenu">&times;</button>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Book Now</a></li>
+        </ul>
+    </aside>
+
+    <!-- Gallery Hero Section -->
+    <section class="gallery-hero">
+        <div class="gallery-hero-content">
+            <h1 id="galleryTitle">Gallery Title</h1>
+            <div class="gallery-nav-buttons">
+                <a href="portfolio.html" class="back-btn">BACK TO ALL</a>
+                <a href="#" class="next-btn" id="nextGalleryBtn">NEXT GALLERY</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Grid -->
+    <section class="gallery-grid">
+        <div class="gallery-container" id="galleryContainer">
+            <!-- Images will be dynamically loaded here -->
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-top">
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="portfolio.html">Portfolio</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Book Now</a>
+            </div>
+            <div class="footer-social">
+                <a href="https://www.instagram.com/tmm.photography1/" target="_blank" rel="noopener noreferrer" aria-label="Follow on Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.tiktok.com/@tmm.photography1" target="_blank" rel="noopener noreferrer" aria-label="Follow on TikTok"><i class="fab fa-tiktok"></i></a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>Website Powered by <a href="https://ianinnovates.com" target="_blank" rel="noopener noreferrer">Ianinnovates</a></span>
+            <span class="footer-copyright-small">© 2025 TMM Photography | Serving Naperville, Aurora, Wheaton & DuPage County | All rights reserved</span>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/gallery.js"></script>
+    <script src="js/header.js"></script>
+
+    <!-- Lightbox Structure -->
+    <div id="lightbox" class="lightbox">
+        <span class="close-btn">&times;</span>
+        <img class="lightbox-content" id="lightboxImg">
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    </div>
+</body>
+</html> 
