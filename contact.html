@@ -181,6 +181,10 @@
 
         <section class="contact-section">
             <h1>Contact Me</h1>
+            <div id="success-message" class="success-message" style="display: none;">
+                <i class="fas fa-check-circle"></i>
+                <p>Thank you for your message! I'll get back to you soon.</p>
+            </div>
             <div class="contact-content">
                 <div class="contact-info">
                     <h2>Contact Me</h2>
@@ -205,8 +209,8 @@
                     <!-- Enable Captcha -->
                     <input type="hidden" name="_captcha" value="true">
                     
-                    <!-- Prevent spam by blocking free email providers -->
-                    <input type="hidden" name="_autoresponse" value="Thank you for your message. I will get back to you soon!">
+                
+                    
                     
                     <!-- Block common spam words -->
                     
@@ -263,5 +267,55 @@
 
     <script src="js/main.js"></script>
     <script src="js/header.js"></script>
+    <script>
+        // Check for success parameter in URL
+        const urlParams = new URLSearchParams(window.location.search);
+        if (urlParams.get('success') === 'true') {
+            document.getElementById('success-message').style.display = 'block';
+            document.querySelector('.contact-form').style.display = 'none';
+            // Scroll to success message
+            document.getElementById('success-message').scrollIntoView({ behavior: 'smooth' });
+            
+            // Clear the URL parameter
+            window.history.replaceState({}, document.title, window.location.pathname);
+        }
+
+        // Form validation and submission handling
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.querySelector('.contact-form');
+            if (form) {
+                form.addEventListener('submit', function(e) {
+                    // Basic validation
+                    const name = document.getElementById('name').value.trim();
+                    const email = document.getElementById('email').value.trim();
+                    const subject = document.getElementById('subject').value.trim();
+                    const message = document.getElementById('message').value.trim();
+
+                    if (!name || !email || !subject || !message) {
+                        e.preventDefault();
+                        alert('Please fill in all required fields.');
+                        return false;
+                    }
+
+                    // Email validation
+                    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                    if (!emailRegex.test(email)) {
+                        e.preventDefault();
+                        alert('Please enter a valid email address.');
+                        return false;
+                    }
+
+                    // Show loading state
+                    const submitBtn = form.querySelector('.submit-btn');
+                    const originalText = submitBtn.textContent;
+                    submitBtn.textContent = 'Sending...';
+                    submitBtn.disabled = true;
+
+                    // If validation passes, allow form to submit normally
+                    // FormSubmit will handle the actual submission
+                });
+            }
+        });
+    </script>
 </body>
 </html> 
