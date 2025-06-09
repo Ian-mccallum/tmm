@@ -299,8 +299,9 @@
 </head>
 <body>
     <div class="video-background">
-        <video autoplay muted loop>
+        <video autoplay muted loop playsinline preload="auto">
             <source src="vids/MVI_8061.MP4" type="video/mp4">
+            <source src="vids/MVI_8061.webm" type="video/webm">
             Your browser does not support the video tag.
         </video>
     </div>
@@ -333,12 +334,44 @@
             }
         });
 
-        // Ensure video plays properly
+        // Ensure video plays properly with mobile fallbacks
         window.addEventListener('load', function() {
             const video = document.querySelector('video');
-            video.play().catch(function(error) {
-                console.log('Video autoplay failed:', error);
-            });
+            
+            // Try to play video
+            const playPromise = video.play();
+            
+            if (playPromise !== undefined) {
+                playPromise.then(function() {
+                    console.log('Video autoplay started successfully');
+                }).catch(function(error) {
+                    console.log('Video autoplay failed:', error);
+                    
+                    // If autoplay fails, try to play on first user interaction
+                    document.addEventListener('touchstart', function playOnTouch() {
+                        video.play().then(function() {
+                            console.log('Video started after user interaction');
+                        }).catch(function(e) {
+                            console.log('Video play failed even after user interaction:', e);
+                        });
+                        
+                        // Remove the event listener after first interaction
+                        document.removeEventListener('touchstart', playOnTouch);
+                    }, { once: true });
+                    
+                    // Also try on click for desktop/mouse users
+                    document.addEventListener('click', function playOnClick() {
+                        video.play().then(function() {
+                            console.log('Video started after user click');
+                        }).catch(function(e) {
+                            console.log('Video play failed even after user click:', e);
+                        });
+                        
+                        // Remove the event listener after first interaction
+                        document.removeEventListener('click', playOnClick);
+                    }, { once: true });
+                });
+            }
         });
 
         // Image popup timing
