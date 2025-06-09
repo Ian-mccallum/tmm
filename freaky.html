@@ -17,7 +17,7 @@
             overflow: hidden;
         }
 
-        .video-background {
+        .gif-background {
             position: fixed;
             top: 0;
             left: 0;
@@ -27,7 +27,7 @@
             overflow: hidden;
         }
 
-        .video-background video {
+        .background-gif {
             position: absolute;
             top: 50%;
             left: 50%;
@@ -37,101 +37,18 @@
             height: auto;
             transform: translate(-50%, -50%);
             object-fit: cover;
-            /* Hide all video controls and overlays */
-            -webkit-appearance: none;
-            appearance: none;
-            outline: none;
-            border: none;
-            /* iOS-specific fixes */
-            -webkit-transform: translate(-50%, -50%);
+            /* No controls to worry about! */
             -webkit-user-select: none;
             -moz-user-select: none;
             -ms-user-select: none;
             user-select: none;
-        }
-
-        /* Hide video controls on all browsers - aggressive approach */
-        .video-background video::-webkit-media-controls {
-            display: none !important;
-            -webkit-appearance: none !important;
-        }
-
-        .video-background video::-webkit-media-controls-panel {
-            display: none !important;
-        }
-
-        .video-background video::-webkit-media-controls-play-button {
-            display: none !important;
-        }
-
-        .video-background video::-webkit-media-controls-start-playback-button {
-            display: none !important;
-        }
-
-        .video-background video::-webkit-media-controls-overlay-play-button {
-            display: none !important;
-        }
-
-        .video-background video::-webkit-media-controls-fullscreen-button {
-            display: none !important;
-        }
-
-        .video-background video::-webkit-media-controls-volume-slider {
-            display: none !important;
-        }
-
-        .video-background video::-webkit-media-controls-mute-button {
-            display: none !important;
-        }
-
-        .video-background video::-webkit-media-controls-timeline {
-            display: none !important;
-        }
-
-        .video-background video::-webkit-media-controls-current-time-display {
-            display: none !important;
-        }
-
-        .video-background video::-webkit-media-controls-time-remaining-display {
-            display: none !important;
-        }
-
-        .video-background video::-moz-media-controls {
-            display: none !important;
-        }
-
-        /* Additional mobile-specific hiding */
-        .video-background video {
             pointer-events: none;
+            /* Ensure smooth loading */
+            image-rendering: auto;
+            -webkit-image-rendering: auto;
         }
 
-        /* iOS Safari specific overrides */
-        @supports (-webkit-overflow-scrolling: touch) {
-            .video-background video {
-                position: fixed !important;
-                top: 0 !important;
-                left: 0 !important;
-                width: 100vw !important;
-                height: 100vh !important;
-                transform: none !important;
-                -webkit-transform: none !important;
-                object-position: center center !important;
-                z-index: -2 !important;
-            }
-        }
-
-        /* Block any overlay elements - higher z-index for iOS */
-        .video-background::after {
-            content: '';
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 2;
-            pointer-events: none;
-            background: transparent;
-        }
+        /* GIFs are much simpler - no controls to hide! */
 
         /* Back button for escape */
         .back-btn {
@@ -399,12 +316,8 @@
     </style>
 </head>
 <body>
-    <div class="video-background">
-        <video autoplay muted loop playsinline preload="metadata" disablepictureinpicture webkit-playsinline x-webkit-airplay="deny" controlslist="nodownload nofullscreen noremoteplayback">
-            <source src="vids/MVI_8061.MP4" type="video/mp4">
-            <source src="vids/MVI_8061.webm" type="video/webm">
-            Your browser does not support the video tag.
-        </video>
+    <div class="gif-background">
+        <img src="vids/MVI_8061.gif" alt="Background Animation" class="background-gif" loading="eager">
     </div>
 
     <a href="about.html" class="back-btn">← Back</a>
@@ -423,96 +336,12 @@
                 window.location.href = 'about.html';
             }
             
-            // Press SPACE to toggle video play/pause
-            if (e.key === ' ') {
-                e.preventDefault();
-                const video = document.querySelector('video');
-                if (video.paused) {
-                    video.play();
-                } else {
-                    video.pause();
-                }
-            }
+            // GIF doesn't need play/pause controls
         });
 
-        // Ensure video plays properly with mobile fallbacks
+        // GIF background - much simpler! No video controls to worry about
         window.addEventListener('load', function() {
-            const video = document.querySelector('video');
-            
-            // Force remove controls via JavaScript
-            video.controls = false;
-            video.removeAttribute('controls');
-            
-            // Try to play video
-            const playPromise = video.play();
-            
-            if (playPromise !== undefined) {
-                playPromise.then(function() {
-                    console.log('Video autoplay started successfully');
-                    // Double-check controls are still hidden after play
-                    video.controls = false;
-                }).catch(function(error) {
-                    console.log('Video autoplay failed:', error);
-                    
-                    // If autoplay fails, try to play on first user interaction
-                    document.addEventListener('touchstart', function playOnTouch() {
-                        video.play().then(function() {
-                            console.log('Video started after user interaction');
-                            // Ensure controls stay hidden
-                            video.controls = false;
-                        }).catch(function(e) {
-                            console.log('Video play failed even after user interaction:', e);
-                        });
-                        
-                        // Remove the event listener after first interaction
-                        document.removeEventListener('touchstart', playOnTouch);
-                    }, { once: true });
-                    
-                    // Also try on click for desktop/mouse users
-                    document.addEventListener('click', function playOnClick() {
-                        video.play().then(function() {
-                            console.log('Video started after user click');
-                            // Ensure controls stay hidden
-                            video.controls = false;
-                        }).catch(function(e) {
-                            console.log('Video play failed even after user click:', e);
-                        });
-                        
-                        // Remove the event listener after first interaction
-                        document.removeEventListener('click', playOnClick);
-                    }, { once: true });
-                });
-            }
-            
-            // iOS-specific control hiding
-            function hideControls() {
-                video.controls = false;
-                video.removeAttribute('controls');
-                
-                // iOS Safari specific
-                if (/(iPad|iPhone|iPod)/g.test(navigator.userAgent)) {
-                    video.setAttribute('webkit-playsinline', '');
-                    video.setAttribute('playsinline', '');
-                    
-                    // Force video to be treated as decoration
-                    video.style.pointerEvents = 'none';
-                    video.style.webkitUserSelect = 'none';
-                    video.style.userSelect = 'none';
-                    
-                    // Try to move video further back
-                    video.style.zIndex = '-10';
-                }
-            }
-            
-            // Run immediately and on intervals
-            hideControls();
-            setInterval(hideControls, 100);
-            
-            // Also hide on various events
-            video.addEventListener('loadedmetadata', hideControls);
-            video.addEventListener('loadeddata', hideControls);
-            video.addEventListener('canplay', hideControls);
-            video.addEventListener('play', hideControls);
+            console.log('GIF background loaded - no controls, no problems!');
         });
 
         // Image popup timing
