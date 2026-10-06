@@ -212,7 +212,7 @@ tmm/
 
 ## 📄 License & Credits
 
-- **Website Development**: Powered by Ianinnovates
+- **Website Development**: Ian McCallum ([ianmccallum.com](https://ianmccallum.com))
 - **Photography**: © 2025 TMM Photography - All rights reserved
 - **Fonts**: Google Fonts (Outfit, Inter)
 - **Icons**: Font Awesome
